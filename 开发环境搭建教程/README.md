@@ -29,12 +29,21 @@
 到此就完全安装好bochs了。  
 
 6、配置bochs  
-配置bochs的相关信息，主要包括硬盘启动信息和内存等，已经放在了[mini_os/]()中的bochsrc.disk。
+配置bochs的相关信息，主要包括硬盘启动信息和内存等，已经放在了[mini_os/代码（按照相关章节，有详细注释）/](https://github.com/luoyoutao/mini_os/tree/main/%E4%BB%A3%E7%A0%81%EF%BC%88%E6%8C%89%E7%85%A7%E7%9B%B8%E5%85%B3%E7%AB%A0%E8%8A%82%EF%BC%8C%E6%9C%89%E8%AF%A6%E7%BB%86%E6%B3%A8%E9%87%8A%EF%BC%89)下的bochsrc.disk。这个文件最后需要放到安装好的bochs文件夹下。备后续开发使用。  
 
+7、创建虚拟硬盘  
+给bochs创建虚拟硬盘。bochs可以模拟硬件环境，包括硬盘。bochs给我们提供了创建虚拟硬盘的工具bin/bximage。我们先看下这个命令的帮助，如下所示：  
+-fd 创建软盘  
+-hd 创建硬盘  
+-mode 创建硬盘的类型，有flat、sparse、growing三种  
+-size 指创建多大的硬盘，以MB为单位  
+-q 以静默模式创建，创建过程中不会和用户交互  
+那么我们在bochs安装文件夹下执行如下命令：bin/bximage -hd -mode="flat" -szie=60 -q hd60M.img  
 
-
-
-
-
-
-
+8、运行bochs  
+由于运行中需要图像显示，而之前如果安装的是最小系统是没有图像的，那么这里需要安装图像界面，两条指令：  
+[root@localhost~]# yum groupinstall "X Window System"  
+[root@localhost~]# yum groupinstall "GNOME Desktop"  
+安装后需要重启再进入图像模式，命令为：startx  
+最后在bochs安装目录下运行命令：bin/bochs -f bochsrc.disk，然后回车，当出现<bochs:1>时，键入入c，出现如下图像就成功了：  
+![image](https://user-images.githubusercontent.com/40891397/190629019-37466776-a0c9-468d-b36a-24c77716c071.png)
