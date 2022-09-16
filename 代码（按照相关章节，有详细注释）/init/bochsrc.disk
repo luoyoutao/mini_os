@@ -1,0 +1,23 @@
+# 编辑bochsrc.disk并放入bochs文件夹
+# 设置 Bochs 在运行过程中能够使用的内存，本例为 32MB
+megs:32
+
+# 设置对应真实机器的 BIOS 和 VGA BIOS。对应两个关键字为： romimage 和 vgaromimage
+# 此处路径需要换成你自己的bochs安装路径，即file=/your_path/bochs/…...。其中bochs是你安装bochs时取的名称
+romimage:file=/home/bochs/share/bochs/BIOS-bochs-latest
+vgaromimage:file=/home/bochs/share/bochs/VGABIOS-lgpl-latest
+
+# 选择启动盘符。改为从硬盘启动
+boot:disk
+
+# 设置日志文件的输出。
+log:bochs.out
+
+# 开启或关闭某些功能。下面是关闭鼠标，并打开键盘
+# 此处路径需要换成你自己的bochs安装路径，即file=/your_path/bochs/…...。其中bochs是你安装bochs时取的名称
+mouse:enabled=0
+keyboard:keymap=/home/bochs/share/bochs/keymaps/x11-pc-us.map
+# 硬盘设置
+ata0:enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+# 启动盘信息
+ata0-master:type=disk, path="hd60M.img", mode=flat
