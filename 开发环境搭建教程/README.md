@@ -1,5 +1,5 @@
 # 偷懒技巧
-下面会介绍整个开发环境的配置，会编写系列代码，为了方便，我已经编写成shell脚本，就在目录[mini_os/代码（按照相关章节，有详细注释）/init/下](https://github.com/luoyoutao/mini_os/tree/main/%E4%BB%A3%E7%A0%81%EF%BC%88%E6%8C%89%E7%85%A7%E7%9B%B8%E5%85%B3%E7%AB%A0%E8%8A%82%EF%BC%8C%E6%9C%89%E8%AF%A6%E7%BB%86%E6%B3%A8%E9%87%8A%EF%BC%89/init)，同时详细介绍了使用方法。    
+下面会介绍整个开发环境的配置，会编写系列代码，为了方便，我已经编写成shell脚本，就在目录[mini_os/代码/第一章/](https://github.com/luoyoutao/mini_os/tree/main/%E4%BB%A3%E7%A0%81/%E7%AC%AC%E4%B8%80%E7%AB%A0)，同时详细介绍了使用方法。    
 # 从零开始搭建环境
 1、VirtualBox的安装  
 官网链接：https://www.virtualbox.org/wiki/Downloads  
@@ -31,7 +31,7 @@
 到此就完全安装好bochs了。  
 
 6、配置bochs  
-配置bochs的相关信息，主要包括硬盘启动信息和内存等，已经放在了[mini_os/代码（按照相关章节，有详细注释）/](https://github.com/luoyoutao/mini_os/tree/main/%E4%BB%A3%E7%A0%81%EF%BC%88%E6%8C%89%E7%85%A7%E7%9B%B8%E5%85%B3%E7%AB%A0%E8%8A%82%EF%BC%8C%E6%9C%89%E8%AF%A6%E7%BB%86%E6%B3%A8%E9%87%8A%EF%BC%89)下的bochsrc.disk。这个文件最后需要放到安装好的bochs文件夹下。备后续开发使用。  
+配置bochs的相关信息，主要包括硬盘启动信息和内存等，已经放在了[mini_os/代码/第一章/](https://github.com/luoyoutao/mini_os/tree/main/%E4%BB%A3%E7%A0%81/%E7%AC%AC%E4%B8%80%E7%AB%A0)下的bochsrc.disk。这个文件最后需要放到安装好的bochs文件夹下。备后续开发使用。  
 
 7、创建虚拟硬盘  
 给bochs创建虚拟硬盘。bochs可以模拟硬件环境，包括硬盘。bochs给我们提供了创建虚拟硬盘的工具bin/bximage。我们先看下这个命令的帮助，如下所示：  
