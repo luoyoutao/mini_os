@@ -40,7 +40,7 @@
 -mode 创建硬盘的类型，有flat、sparse、growing三种  
 -size 指创建多大的硬盘，以MB为单位  
 -q 以静默模式创建，创建过程中不会和用户交互  
-那么我们在bochs安装文件夹下执行如下命令：bin/bximage -hd -mode="flat" -szie=60 -q hd60M.img  
+那么我们在bochs安装文件夹下执行如下命令：bin/bximage -hd -mode="flat" -size=60 -q hd60M.img  
 
 8、运行bochs  
 由于运行中需要图像显示，而之前如果安装的是最小系统是没有图像的，那么这里需要安装图像界面，两条指令：  
